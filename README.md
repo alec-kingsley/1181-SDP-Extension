@@ -42,7 +42,10 @@ drawScene(symbols, screen);
 
 ## Getting input from either keyboard or mouse
 
-Add the following function to SimpleGameEngine
+Add the following function to SimpleGameEngine. To use it, run `[row, col, button] = getKeyAndMouseInput(my_scene)`. 
+If `row` and `col` are -1, then a key was pressed, otherwise the mouse was clicked. If the mouse was clicked, `button`
+will contain which mouse button was clicked (1, 2, or 3 for left, middle, and right), otherwise `button` will contain
+the key pressed.
 
 ```MATLAB
 function [row,col,button] = getKeyAndMouseInput(obj)
@@ -55,7 +58,7 @@ function [row,col,button] = getKeyAndMouseInput(obj)
     %  left, middle, and right, respectively), or key pressed
     % 
     % Example:
-    %     [row,col,button] = getMouseInput (my_scene);
+    %     [row, col, button] = getKeyAndMouseInput(my_scene);
             
     % Bring this scene to focus
     figure(obj.my_figure);
