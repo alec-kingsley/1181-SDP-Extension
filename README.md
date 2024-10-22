@@ -10,6 +10,31 @@ save(filename.mat, variables)
 load filename.mat
 ```
 
+## Using text neatly in the game
+
+Download [ascii.png](./ascii.png). It includes sprites for many common characters at the indeces that correspond to ASCII.
+This means that text can be directly inserted into your board without having to worry about converting the sprite values back
+and forth between the characters they represent.
+
+Try this example script once you have ascii.png downloaded:
+
+```MATLAB
+symbols = simpleGameEngine("ascii.png",16,16,2,[150,0,0]);
+
+screen = ['                       ';
+          ' This sheet is aligned ';
+          ' with ascii for a few  ';
+          ' hundred characters,   ';
+          ' so text can easily    ';
+          ' just be printed       ';
+          ' without having to     ';
+          ' deal with using       ';
+          ' constant values for   ';
+          ' each character.       ';
+          '                       '];
+drawScene(symbols, screen);
+```
+
 ## Getting input from either keyboard or mouse
 
 Add the following function to SimpleGameEngine
