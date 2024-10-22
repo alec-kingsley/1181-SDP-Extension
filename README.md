@@ -51,7 +51,6 @@ function [row,col,button] = getKeyAndMouseInput(obj)
     %  3. The button of the mouse used to click (1,2, or 3 for
     %  left, middle, and right, respectively), or key pressed
     % 
-    % 
     % Example:
     %     [row,col,button] = getMouseInput (my_scene);
             
