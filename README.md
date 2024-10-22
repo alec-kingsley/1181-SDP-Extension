@@ -33,6 +33,7 @@ screen = ['                       ';
           ' constant values for   ';
           ' each character.       ';
           '                       '];
+
 drawScene(symbols, screen);
 ```
 
