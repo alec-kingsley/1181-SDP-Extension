@@ -12,10 +12,13 @@ load filename.mat
 
 ## Using text neatly in the game
 
-Download [ascii.png](./ascii.png). It includes sprites for many common characters at the indices that correspond to ASCII.
-This means that text can be directly inserted into your board without having to worry about converting the sprite values back
-and forth between the characters they represent. You can include your own sprites in any spaces where you don't intend to use
-those characters.
+In general, text can be added with the [text command](https://www.mathworks.com/help/matlab/ref/text.html), but that displays with
+a very different style and sizing than the board. Additionally, each time you use it you have to test where it ends up.
+
+A cleaner way of doing this is with the [ascii.png](./ascii.png) spritesheet. It includes sprites for many common characters 
+at the indices that correspond to ASCII. This means that text can be directly inserted into your board without having to worry 
+about converting the sprite values back and forth between the characters they represent. You can include your own sprites in any 
+spaces where you don't intend to use those characters.
 
 Try this example script once you have ascii.png downloaded:
 
