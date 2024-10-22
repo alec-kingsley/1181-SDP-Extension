@@ -10,7 +10,7 @@ save(filename.mat, variables)
 load filename.mat
 ```
 
-## Using text neatly in the game
+## Integrating text neatly
 
 In general, text can be added with the [text command](https://www.mathworks.com/help/matlab/ref/text.html), but that displays with
 a very different style and sizing than the board. Additionally, each time you use it you have to test where it ends up.
