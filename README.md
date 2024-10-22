@@ -14,7 +14,8 @@ load filename.mat
 
 Download [ascii.png](./ascii.png). It includes sprites for many common characters at the indeces that correspond to ASCII.
 This means that text can be directly inserted into your board without having to worry about converting the sprite values back
-and forth between the characters they represent.
+and forth between the characters they represent. You can include your own sprites in any spaces where you don't intend to use
+those characters.
 
 Try this example script once you have ascii.png downloaded:
 
