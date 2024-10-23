@@ -40,6 +40,25 @@ screen = ['                       ';
 drawScene(symbols, screen);
 ```
 
+You may run into some issues with character arrays not automatically turning into integers.
+
+To fix this, edit these lines of the SimpleGameEngine (lines 123-126):
+
+```MATLAB
+bg_sprite_id = background_sprites(tile_row,tile_col);
+if nargin > 2
+          fg_sprite_id = foreground_sprites(tile_row,tile_col);
+end
+```
+
+to be
+```MATLAB
+bg_sprite_id = background_sprites(tile_row,tile_col) + 0;
+if nargin > 2
+          fg_sprite_id = foreground_sprites(tile_row,tile_col) + 0;
+end
+```
+
 ## Getting input from either keyboard or mouse
 
 Add the following function to SimpleGameEngine. To use it, run `[row, col, button] = getKeyAndMouseInput(my_scene)`. 
