@@ -128,7 +128,7 @@ end
 
 ## Call functions upon key press (allows ability to take input w/o pausing game)
 
-To do this, an "event listener" must be created for the game's figure
+To do this, an "event listener" can be created for the game's figure
 
 ```MATLAB
 % create the simpleGameEngine
