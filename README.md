@@ -40,6 +40,9 @@ screen = ['                       ';
 drawScene(symbols, screen);
 ```
 
+The output should look like this:
+![ASCII example output](./ascii-demo-output.png)
+
 You may run into some issues with character arrays not automatically turning into integers.
 
 To fix this, edit these lines of the SimpleGameEngine (lines 123-126):
