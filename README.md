@@ -1,4 +1,4 @@
-# Help with advanced features for the ENGR 1181 Software Design Project
+# Extennsions for the ENGR 1181 Software Design Project
 
 ## Saving and loading a game state across runs
 
