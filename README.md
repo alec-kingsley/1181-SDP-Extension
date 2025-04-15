@@ -1,5 +1,7 @@
 # Extensions for the ENGR 1181 Software Design Project
 
+The code in this document may be used freely for the OSU ENGR 1181 Software Design Project. These sections resolve common issues with the project and work-arounds to things not discussed in the course.
+
 ## Saving and loading a game state across runs
 
 ```MATLAB
