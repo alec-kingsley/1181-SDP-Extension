@@ -27,12 +27,12 @@ Try this example script once you have ascii.png downloaded:
 ```MATLAB
 RED = [150, 0, 0]
 BACKGROUND_COLOR = RED
-SPRITE_WIDTH = 16
 SPRITE_HEIGHT = 16
+SPRITE_WIDTH = 16
 ZOOM = 2
 
 SGE = simpleGameEngine("ascii.png", SPRITE_HEIGHT, SPRITE_WIDTH, ...
-                           ZOOM, BACKGROUND_COLOR);
+                       ZOOM, BACKGROUND_COLOR);
 
 screen = ['                       ';
           ' This sheet is aligned ';
@@ -143,18 +143,21 @@ To do this, an "event listener" can be created for the game's figure
 
 ```MATLAB
 % create the simpleGameEngine
-SPRITE_WIDTH = 16
 SPRITE_HEIGHT = 16
+SPRITE_WIDTH = 16
 SGE = simpleGameEngine("iconSheet.png", SPRITE_HEIGHT, SPRITE_WIDTH);
  
-% you must use drawScene at least once to create the figure BEFORE setting up the listener
+% you must use drawScene at least once to create the figure
+% BEFORE setting up the listener
 screen = ones(5, 5);
 SGE.drawScene(screen);
  
-% set a listener for the game's figure to call handleKeyPress when a key is pressed
+% set a listener for the game's figure to call handleKeyPress
+% when a key is pressed
 set(scene.my_figure, 'KeyPressFcn', @(src, event) handleKeyPress(event));
  
-% this just prints whatever key was last pressed to the console, but can be anything
+% this just prints whatever key was last pressed to the console,
+% but can be anything
 function handleKeyPress(event)
     key = event.Key;
     fprintf("%s\n",key);
