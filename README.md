@@ -148,8 +148,8 @@ SPRITE_HEIGHT = 16
 SGE = simpleGameEngine("iconSheet.png", SPRITE_HEIGHT, SPRITE_WIDTH);
  
 % you must use drawScene at least once to create the figure BEFORE setting up the listener
-board = ones(5, 5)
-SGE.drawScene(board);
+screen = ones(5, 5);
+SGE.drawScene(screen);
  
 % set a listener for the game's figure to call handleKeyPress when a key is pressed
 set(scene.my_figure, 'KeyPressFcn', @(src, event) handleKeyPress(event));
