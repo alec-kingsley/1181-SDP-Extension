@@ -25,7 +25,14 @@ spaces where you don't intend to use those characters.
 Try this example script once you have ascii.png downloaded:
 
 ```MATLAB
-symbols = simpleGameEngine("ascii.png",16,16,2,[150,0,0]);
+RED = [150, 0, 0]
+BACKGROUND_COLOR = RED
+SPRITE_WIDTH = 16
+SPRITE_HEIGHT = 16
+ZOOM = 2
+
+SGE = simpleGameEngine("ascii.png", SPRITE_HEIGHT, SPRITE_WIDTH, ...
+                           ZOOM, BACKGROUND_COLOR);
 
 screen = ['                       ';
           ' This sheet is aligned ';
@@ -39,7 +46,7 @@ screen = ['                       ';
           ' each character.       ';
           '                       '];
 
-drawScene(symbols, screen);
+SGE.drawScene(screen);
 ```
 
 The output should look like this:
@@ -88,12 +95,14 @@ function [row,col,button] = getKeyAndMouseInput(obj)
     figure(obj.my_figure);
 
     keydown = waitforbuttonpress;
-    % if mouse input
     if keydown
+        % Key was pressed (not mouse)
         button = get(obj.my_figure,'CurrentKey');
         row = -1;
         col = -1;
     else
+        % Mouse was clicked
+
         % Get the user mouse position
         point = get(gca, 'CurrentPoint');
         X = point(1, 1);
@@ -134,10 +143,13 @@ To do this, an "event listener" can be created for the game's figure
 
 ```MATLAB
 % create the simpleGameEngine
-scene = simpleGameEngine("iconSheet.png",16,16);
+SPRITE_WIDTH = 16
+SPRITE_HEIGHT = 16
+SGE = simpleGameEngine("iconSheet.png", SPRITE_HEIGHT, SPRITE_WIDTH);
  
 % you must use drawScene at least once to create the figure BEFORE setting up the listener
-drawScene(scene,ones(5,5));
+board = ones(5, 5)
+SGE.drawScene(board);
  
 % set a listener for the game's figure to call handleKeyPress when a key is pressed
 set(scene.my_figure, 'KeyPressFcn', @(src, event) handleKeyPress(event));
